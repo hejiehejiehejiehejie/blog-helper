@@ -1,0 +1,76 @@
+{
+  "name": "blog-helper",
+  "displayName": "Blog Helper",
+  "description": "一款帮助 Hexo 博客实现一键新建、发布的极简控制台",
+  "version": "0.0.1",
+  "publisher": "hejie", 
+  "icon": "images/icon.png", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hejiehejiehejiehejie/blog-helper"
+  },
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Blog Helper 配置",
+      "properties": {
+        "blog-helper.blogPath": {
+          "type": "string",
+          "default": "",
+          "description": "你的 Hexo 博客本地根目录路径"
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "blogSidebar",
+          "name": "博客控制台"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "blog-helper.newPost",
+        "title": "Blog: 新建文章"
+      },
+      {
+        "command": "blog-helper.deploy",
+        "title": "Blog: 一键发布"
+      },
+      {
+        "command": "blog-helper.setPath",
+        "title": "Blog: 更改路径"
+      },
+      {
+        "command": "blog-helper.installDeps",
+        "title": "Blog: 修复环境"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.19",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  }
+}

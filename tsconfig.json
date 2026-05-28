@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2022",
+    "outDir": "out",
+    "rootDir": "src",     // <-- 加上这一行，告诉 TS 源码都在 src 文件夹里
+    "types": ["node"],    // <-- 这是咱们上一步加的
+    "sourceMap": true,
+    "strict": true
+    // ... 下面其他原有的配置保持不变
+  },
+  "exclude": [
+    "node_modules",
+    ".vscode-test"
+  ]
+}
